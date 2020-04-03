@@ -40,6 +40,13 @@ module.exports = function (grunt) {
       html: {
         src: './index.html',
         dest: './dist/index.html'
+      },
+      image: {
+        files: {
+          expand: true,
+          src: ['./images/*.png'],
+          dest: 'dist/'
+        }
       }
     },
     concat: {
