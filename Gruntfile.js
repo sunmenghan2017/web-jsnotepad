@@ -30,16 +30,10 @@ module.exports = function (grunt) {
       }
     },
     imagemin: {
-      dist: {
-        options: {
-            optimizationLevel: 3 //定义 PNG 图片优化水平
-        },
-        files: [{
-            expand: true,
-            cwd:'images/',
-            src: ['../images/*.png'],
-            dest: 'dist/images/'
-        }]
+      files: {
+        expand: true,
+        src: ['./images/*.png'],
+        dest: 'dist/'
       }
     },
     copy: {
