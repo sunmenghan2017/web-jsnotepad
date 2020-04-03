@@ -29,24 +29,23 @@ module.exports = function (grunt) {
         dest: 'dist/index.html'
       }
     },
-    // imagemin: {
-    //   files: {
-    //     expand: true,
-    //     src: ['./images/*.png'],
-    //     dest: 'dist/'
-    //   }
-    // },
+    imagemin: {
+      dist: {
+        options: {
+            optimizationLevel: 3 //定义 PNG 图片优化水平
+        },
+        files: [{
+            expand: true,
+            cwd:'images/',
+            src: ['../images/*.png'],
+            dest: 'images/'
+        }]
+      }
+    },
     copy: {
       html: {
         src: './index.html',
         dest: './dist/index.html'
-      },
-      image: {
-        files: {
-          expand: true,
-          src: ['./images/*.png'],
-          dest: 'dist/'
-        }
       }
     },
     concat: {
@@ -88,10 +87,10 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
-  // grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-usemin');
 
   grunt.registerTask('lint', ['htmlhint', 'csslint', 'eslint']);
-  grunt.registerTask('build', ['copy:html', 'useminPrepare', 'concat', 'uglify', 'cssmin', 'usemin', 'htmlmin','clean:end']);
+  grunt.registerTask('build', ['copy:html', 'useminPrepare', 'concat', 'uglify', 'cssmin', 'usemin', 'htmlmin','imagemin','clean:end']);
 };

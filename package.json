@@ -23,12 +23,14 @@
     "grunt-contrib-csslint": "^2.0.0",
     "grunt-contrib-cssmin": "^2.2.1",
     "grunt-contrib-htmlmin": "^2.4.0",
-    "grunt-contrib-imagemin": "^2.0.1",
     "grunt-contrib-uglify": "^3.3.0",
     "grunt-eslint": "^21.0.0",
     "grunt-htmlhint": "^0.9.13",
     "grunt-usemin": "^3.1.1"
   },
   "main": "Gruntfile.js",
-  "keywords": []
+  "keywords": [],
+  "dependencies": {
+    "grunt-contrib-imagemin": "^4.0.0"
+  }
 }
