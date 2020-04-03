@@ -29,13 +29,6 @@ module.exports = function (grunt) {
         dest: 'dist/index.html'
       }
     },
-    // imagemin: {
-    //   files: {
-    //     expand: true,
-    //     src: ['./images/*.png'],
-    //     dest: 'dist/'
-    //   }
-    // },
     copy: {
       html: {
         src: './index.html',
